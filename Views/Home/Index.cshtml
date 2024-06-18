@@ -1,8 +1,38 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
-}
+    var vehiclesOnDuty = ViewBag.VehiclesOnDuty as List<FireDepartmentManagerWebApp.Models.Vehicle>;
+    string currentDayOfWeek = DateTime.Now.ToString("dddd", new System.Globalization.CultureInfo("bg-BG"));
+    currentDayOfWeek = char.ToUpper(currentDayOfWeek[0]) + currentDayOfWeek.Substring(1);
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+    string currentDate = DateTime.Now.ToString("dd.MM.yyyy");
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Fire Safety Manager</title>
+</head>
+<body>
+    <h4>Автомобили на дежурство - @currentDayOfWeek (@currentDate)</h4>
+    @if (vehiclesOnDuty != null && vehiclesOnDuty.Any())
+    {
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>Автомобил</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var vehicle in vehiclesOnDuty)
+                {
+                    <tr>
+                        <td>@vehicle.CarModel</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+    else
+    {
+        <p>Няма автомобили на дежурство.</p>
+    }
+</body>
+</html>
