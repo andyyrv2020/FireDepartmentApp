@@ -1,0 +1,31 @@
+﻿-- Insert random data with Bulgarian names into Employees table for 30 employees
+INSERT INTO [dbo].[Employees] ([FirstName], [LastName], [DateOfBirth], [EmailAddress], [PhoneNumber], [VehicleId])
+VALUES
+    ('Georgi', 'Ivanov', '1990-05-15', 'georgi.ivanov@example.com', '123-456-7890', 1),
+    ('Maria', 'Petrova', '1985-10-22', 'maria.petrova@example.com', '987-654-3210', 2),
+    ('Stoyan', 'Georgiev', '1982-03-07', 'stoyan.georgiev@example.com', '555-123-4567', 3),
+    ('Elena', 'Dimitrova', '1995-07-12', 'elena.dimitrova@example.com', '444-789-0123', 4),
+    ('Ivan', 'Stoyanov', '1978-12-30', 'ivan.stoyanov@example.com', '777-888-9999', 5),
+    ('Petar', 'Nikolov', '1993-09-18', 'petar.nikolov@example.com', '321-654-9870', 6),
+    ('Tanya', 'Vasileva', '1987-04-25', 'tanya.vasileva@example.com', '666-111-2222', 7),
+    ('Dimitar', 'Iliev', '1980-11-05', 'dimitar.iliev@example.com', '999-888-7777', 8),
+    ('Svetlana', 'Pavlova', '1975-08-14', 'svetlana.pavlova@example.com', '222-333-4444', 9),
+    ('Nikolay', 'Angelov', '1991-01-31', 'nikolay.angelov@example.com', '555-777-9999', 10),
+    ('Lyubomir', 'Kostov', '1984-06-28', 'lyubomir.kostov@example.com', '888-999-0000', 11),
+    ('Radka', 'Todorova', '1989-03-17', 'radka.todorova@example.com', '123-789-4567', 12),
+    ('Veselin', 'Kolev', '1983-12-09', 'veselin.kolev@example.com', '456-789-0123', 13),
+    ('Silvia', 'Petrov', '1979-07-24', 'silvia.petrov@example.com', '789-123-4567', 14),
+    ('Dobromir', 'Ivanov', '1992-02-11', 'dobromir.ivanov@example.com', '321-654-9870', 15),
+    ('Gergana', 'Dimitrova', '1986-05-06', 'gergana.dimitrova@example.com', '666-777-8888', 16),
+    ('Boyan', 'Stefanov', '1994-08-23', 'boyan.stefanov@example.com', '111-222-3333', 17),
+    ('Nadezhda', 'Kirova', '1981-09-19', 'nadezhda.kirova@example.com', '555-666-7777', 18),
+    ('Yordan', 'Georgiev', '1988-11-14', 'yordan.georgiev@example.com', '999-888-7777', 19),
+    ('Mariya', 'Pavlova', '1987-03-30', 'mariya.pavlova@example.com', '444-555-6666', 20),
+    ('Hristo', 'Danev', '1990-12-17', 'hristo.dimitrov@example.com', '777-888-9999', 21),
+    ('Rumyana', 'Ilieva', '1976-04-05', 'rumyana.ilieva@example.com', '222-333-4444', 22),
+    ('Krasimir', 'Ivanov', '1982-01-22', 'krasimir.ivanov@example.com', '888-999-0000', 23),
+    ('Desislava', 'Stoyanova', '1993-06-08', 'desislava.stoyanova@example.com', '123-789-4567', 24),
+    ('Mihmandar', 'Dunerov', '2000-03-27', 'mihmandar.dunerov@example.com', '777-777-7777', 25),
+    ('Ismail', 'Joshua', '1969-06-09', 'ismail.joshua@example.com', '666-999-6969', 26),
+    ('Dimitar', 'Georgiev', '1987-05-16', 'chipito.egei@example.com', '313-313-3131', 27);
+
