@@ -1,23 +1,21 @@
 ﻿@{
     var vehiclesOnDuty = ViewBag.VehiclesOnDuty as List<FireDepartmentManagerWebApp.Models.Vehicle>;
-    string currentDayOfWeek = DateTime.Now.ToString("dddd", new System.Globalization.CultureInfo("bg-BG"));
+    string currentDayOfWeek = DateTime.Now.ToString("dddd", new System.Globalization.CultureInfo("en-EN"));
     currentDayOfWeek = char.ToUpper(currentDayOfWeek[0]) + currentDayOfWeek.Substring(1);
 
     string currentDate = DateTime.Now.ToString("dd.MM.yyyy");
 }
 <!DOCTYPE html>
 <html>
-<head>
-    <title>Fire Safety Manager</title>
-</head>
+
 <body>
-    <h4>Автомобили на дежурство - @currentDayOfWeek (@currentDate)</h4>
+    <h4>Vehicles On Duty - @currentDayOfWeek (@currentDate)</h4>
     @if (vehiclesOnDuty != null && vehiclesOnDuty.Any())
     {
         <table border="1">
             <thead>
                 <tr>
-                    <th>Автомобил</th>
+                    <th>Vehicles</th>
                 </tr>
             </thead>
             <tbody>
@@ -32,7 +30,7 @@
     }
     else
     {
-        <p>Няма автомобили на дежурство.</p>
+        <p>No vehicles available.</p>
     }
 </body>
 </html>
