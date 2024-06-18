@@ -89,7 +89,7 @@ FireDepartmentManagerWebApp/
 
 ## Contributing
 
-Contributions are welcome! Please read the [CONTRIBUTING.md](CONTRIBUTING.md) for details on our code of conduct, and the process for submitting pull requests.
+Contributions are welcome! Please read the [CONTRIBUTING.md](contributing.md) for details on our code of conduct, and the process for submitting pull requests.
 
 ## License
 
