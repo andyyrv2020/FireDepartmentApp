@@ -15,14 +15,19 @@
         <table border="1">
             <thead>
                 <tr>
-                    <th>Vehicles</th>
+                    <th></th>
+                    <th>Vehicle Model</th>
+                    <th></th>
+
                 </tr>
             </thead>
             <tbody>
-                @foreach (var vehicle in vehiclesOnDuty)
+                @for (int i = 0; i < vehiclesOnDuty.Count; i++)
                 {
                     <tr>
-                        <td>@vehicle.CarModel</td>
+                        <td>@(i+1).</td>
+                        <td>‎ @vehiclesOnDuty[i].CarModel</td>
+                        <td>‎ ‎ </td>
                     </tr>
                 }
             </tbody>
