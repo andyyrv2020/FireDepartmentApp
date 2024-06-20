@@ -8,6 +8,7 @@ FireDepartmentManagerWebApp is a web application designed to assist fire departm
 - [Installation](#installation)
 - [Usage](#usage)
 - [Project Structure](#project-structure)
+- [Database Structure](#database-structure)
 - [Contributing](#contributing)
 - [License](#license)
 
@@ -93,7 +94,7 @@ FireDepartmentManagerWebApp/
 
 ## Contributing
 
-    Contributions are welcome! Please read the [CONTRIBUTING.md](CONTRIBUTING.md) for details on our code of conduct, and the process for submitting pull requests.
+Contributions are welcome! Please read the [CONTRIBUTING.md](CONTRIBUTING.md) for details on our code of conduct, and the process for submitting pull requests.
 
 ## License
 
