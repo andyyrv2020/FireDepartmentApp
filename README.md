@@ -87,8 +87,10 @@ FireDepartmentManagerWebApp/
     └── webpack.config.js
 ```
 
-##Database Structure
+## Database Structure
+
 ![FireDepartmentAppDb](https://github.com/andyyrv2020/FireDepartmentApp/assets/46199572/63a257d6-42f3-4ace-a569-99fd6128a2ac)
+
 ## Contributing
 
     Contributions are welcome! Please read the [CONTRIBUTING.md](CONTRIBUTING.md) for details on our code of conduct, and the process for submitting pull requests.
