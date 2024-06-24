@@ -1,33 +1,59 @@
 ﻿@{
+    ViewData["Title"] = "Home Page";
+    var employeeRankings = ViewBag.EmployeeRankings;
+    var vehicleStats = ViewBag.VehicleStats;
+    var vehicleEfficiency = ViewBag.VehicleEfficiency;
     var vehiclesOnDuty = ViewBag.VehiclesOnDuty as List<FireDepartmentManagerWebApp.Models.Vehicle>;
     string currentDayOfWeek = DateTime.Now.ToString("dddd", new System.Globalization.CultureInfo("en-EN"));
     currentDayOfWeek = char.ToUpper(currentDayOfWeek[0]) + currentDayOfWeek.Substring(1);
 
     string currentDate = DateTime.Now.ToString("dd.MM.yyyy");
 }
-<!DOCTYPE html>
-<html>
+
+<style>
+    /* Remove margin and padding from all elements */
+    body, h4, table, th, td {
+        margin: 0;
+        padding: 0;
+    }
+
+    /* Style for tables */
+    table {
+        border-collapse: collapse;
+        width: 100%;
+        margin-bottom: 10px; /* Add a small bottom margin between tables */
+    }
+
+    th, td {
+        border: 1px solid black;
+        padding: 8px;
+        text-align: left;
+    }
+
+    h4 {
+        margin-top: 0; /* Remove top margin from h4 elements */
+    }
+</style>
+
 
 <body>
+    <hr />
     <h4>Vehicles On Duty - @currentDayOfWeek (@currentDate)</h4>
     @if (vehiclesOnDuty != null && vehiclesOnDuty.Any())
     {
         <table border="1">
             <thead>
                 <tr>
-                    <th></th>
+                    <th><strong>#</strong></th>
                     <th>Vehicle Model</th>
-                    <th></th>
-
                 </tr>
             </thead>
             <tbody>
                 @for (int i = 0; i < vehiclesOnDuty.Count; i++)
                 {
                     <tr>
-                        <td>@(i+1).</td>
-                        <td>‎ @vehiclesOnDuty[i].CarModel</td>
-                        <td>‎ ‎ </td>
+                        <td>@(i + 1).</td>
+                        <td>@vehiclesOnDuty[i].CarModel</td>
                     </tr>
                 }
             </tbody>
@@ -38,4 +64,71 @@
         <p>No vehicles available.</p>
     }
 </body>
-</html>
+
+<hr />
+<h4>Employee Rankings by Number of Incidents</h4>
+<table border="1">
+    <thead>
+        <tr>
+            <th>Employee </th>
+            <th>Total Incidents</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in employeeRankings)
+        {
+            <tr>
+                <td>@item.EmployeeName</td>
+                <td>@item.IncidentCount</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<hr />
+<h4>Vehicle Incident Statistics</h4>
+<table border="1">
+    <thead>
+        <tr>
+            <th>Vehicle</th>
+            <th>Average Duration (hours)</th>
+            <th>Min Duration (hours)</th>
+            <th>Max Duration (hours)</th>
+            <th>Incident Count</th>
+            <th>Total Hours</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in vehicleStats)
+        {
+            <tr>
+                <td>@item.VehicleName</td>
+                <td>@item.AverageDuration?.ToString("F2") Hour/s"</td>
+                <td>@item.MinDuration?.ToString("F2") Hour/s"</td>
+                <td>@item.MaxDuration?.ToString("F2") Hour/s"</td>
+                <td>@item.IncidentCount</td>
+                <td>@item.TotalHours?.ToString("F2") Hour/s"</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<hr />
+<h4>Vehicle Efficiency for Fire Extinguishing</h4>
+<table border="1">
+    <thead>
+        <tr>
+            <th>Vehicle</th>
+            <th>Average Used Water</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in vehicleEfficiency)
+        {
+            <tr>
+                <td>@item.VehicleName</td>
+                <td>@item.Efficiency?.ToString("F2")L"</td>
+            </tr>
+        }
+    </tbody>
+</table>
