@@ -27,6 +27,11 @@
         footer {
             margin-top: auto;
         }
+
+        /* Additional style for active state */
+        .active {
+            background-color: rgba(0, 0, 0, 0.0); /* Light gray background when active */
+        }
     </style>
 </head>
 <body>
@@ -84,7 +89,7 @@
 
     <div class="container">
         <main role="main" class="pb-3">
-            @RenderBody()
+            @RenderBody() <!-- Важно: това извиква съдържанието на текущата страница -->
         </main>
     </div>
 
@@ -97,6 +102,7 @@
         document.addEventListener('DOMContentLoaded', () => {
             const btnSwitch = document.getElementById('btnSwitch');
             const modeIcon = document.getElementById('modeIcon');
+            const switchInput = document.getElementById('flexSwitchCheckDefault');
 
             // Function to set the theme based on local storage
             const setThemeFromStorage = () => {
@@ -105,10 +111,12 @@
                     document.documentElement.setAttribute('data-bs-theme', 'dark');
                     modeIcon.classList.remove('bi-brightness-high');
                     modeIcon.classList.add('bi-moon-stars');
+                    switchInput.checked = true;
                 } else {
                     document.documentElement.setAttribute('data-bs-theme', 'light');
                     modeIcon.classList.remove('bi-moon-stars');
                     modeIcon.classList.add('bi-brightness-high');
+                    switchInput.checked = false;
                 }
             };
 
@@ -122,10 +130,25 @@
                 localStorage.setItem('theme', newTheme);
                 setThemeFromStorage();
             });
+
+            // Add event listeners for better UX (mousedown and mouseup)
+            btnSwitch.addEventListener('mousedown', () => {
+                btnSwitch.classList.add('active');
+            });
+
+            btnSwitch.addEventListener('mouseup', () => {
+                btnSwitch.classList.remove('active');
+            });
+
+            // Additional listener for the switch input
+            switchInput.addEventListener('change', () => {
+                const currentTheme = localStorage.getItem('theme');
+                const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+                localStorage.setItem('theme', newTheme);
+                setThemeFromStorage();
+            });
         });
     </script>
-
-
 
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>

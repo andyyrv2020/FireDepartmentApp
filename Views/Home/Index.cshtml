@@ -70,7 +70,7 @@
 <table border="1">
     <thead>
         <tr>
-            <th>Employee </th>
+            <th>Employee</th>
             <th>Total Incidents</th>
         </tr>
     </thead>
@@ -78,7 +78,7 @@
         @foreach (var item in employeeRankings)
         {
             <tr>
-                <td>@item.EmployeeName</td>
+                <td>@item.EmployeeFirstName @item.EmployeeLastName</td>
                 <td>@item.IncidentCount</td>
             </tr>
         }
@@ -90,11 +90,11 @@
 <table border="1">
     <thead>
         <tr>
-            <th>Vehicle</th>
-            <th>Average Duration (hours)</th>
-            <th>Min Duration (hours)</th>
-            <th>Max Duration (hours)</th>
-            <th>Incident Count</th>
+            <th>Vehicle Model</th>
+            <th>Average Duration</th>
+            <th>Min Duration</th>
+            <th>Max Duration</th>
+            <th>Total Incidents</th>
             <th>Total Hours</th>
         </tr>
     </thead>
@@ -118,7 +118,7 @@
 <table border="1">
     <thead>
         <tr>
-            <th>Vehicle</th>
+            <th>Vehicle Model</th>
             <th>Average Used Water</th>
         </tr>
     </thead>

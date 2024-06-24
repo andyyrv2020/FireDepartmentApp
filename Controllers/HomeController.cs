@@ -36,7 +36,8 @@ namespace FireDepartmentManagerWebApp.Controllers
             var employeeRankings = _context.Employees
                 .Select(e => new EmployeeRankingViewModel
                 {
-                    EmployeeName = e.FirstName,
+                    EmployeeFirstName = e.FirstName,
+                    EmployeeLastName = e.LastName,
                     IncidentCount = e.Incidents.Count()
                 })
                 .OrderByDescending(e => e.IncidentCount)
