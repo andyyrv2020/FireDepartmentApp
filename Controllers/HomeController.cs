@@ -71,6 +71,8 @@ namespace FireDepartmentManagerWebApp.Controllers
                 .ThenBy(v => v.VehicleName)
                 .ToList();
 
+
+
             ViewBag.VehicleEfficiency = vehicleEfficiency;
 
             return View();

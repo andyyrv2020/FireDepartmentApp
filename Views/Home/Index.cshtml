@@ -8,20 +8,19 @@
     currentDayOfWeek = char.ToUpper(currentDayOfWeek[0]) + currentDayOfWeek.Substring(1);
 
     string currentDate = DateTime.Now.ToString("dd.MM.yyyy");
+    var totalWaterUsed = ViewBag.TotalWaterUsed;
 }
 
 <style>
-    /* Remove margin and padding from all elements */
     body, h4, table, th, td {
         margin: 0;
         padding: 0;
     }
 
-    /* Style for tables */
     table {
         border-collapse: collapse;
-        width: 100%;
-        margin-bottom: 10px; /* Add a small bottom margin between tables */
+        width: 10%
+        margin-bottom: 10px;
     }
 
     th, td {
@@ -31,10 +30,9 @@
     }
 
     h4 {
-        margin-top: 0; /* Remove top margin from h4 elements */
+        margin-top: 0;
     }
 </style>
-
 
 <body>
     <hr />
@@ -44,7 +42,6 @@
         <table border="1">
             <thead>
                 <tr>
-                    <th><strong>#</strong></th>
                     <th>Vehicle Model</th>
                 </tr>
             </thead>
@@ -52,7 +49,6 @@
                 @for (int i = 0; i < vehiclesOnDuty.Count; i++)
                 {
                     <tr>
-                        <td>@(i + 1).</td>
                         <td>@vehiclesOnDuty[i].CarModel</td>
                     </tr>
                 }
